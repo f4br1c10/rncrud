@@ -25,7 +25,7 @@ export default props => {
             <ListItem
                 key={user.id}
                 bottomDivider
-                onPress={() => props.navigation.navigate('UserForm')}
+                onPress={() => props.navigation.navigate('UserForm', user)}
             >
                 <Image source={{ uri: user.avatarUrl }} style={styles.image} />
                 <ListItem.Content>
