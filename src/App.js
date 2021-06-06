@@ -5,7 +5,7 @@ import { Button, Icon } from 'react-native-elements'
 
 import UserList from './views/UserList'
 import UserForm from './views/UserForm'
-import { UsersProvider } from './context/UsersContent'
+import { UsersProvider } from './context/UsersContext'
 
 const Stack = createStackNavigator()
 

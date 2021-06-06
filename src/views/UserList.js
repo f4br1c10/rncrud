@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { View, FlatList, Image, StyleSheet, Alert } from 'react-native'
 import { ListItem, Button, Icon } from 'react-native-elements'
 
-import UsersContext from '../context/UsersContent'
+import UsersContext from '../context/UsersContext'
 
 export default props => {
 
-    const { state } = useContext(UsersContext)
+    const { state, dispatch } = useContext(UsersContext)
 
     function getUserItem({ item: user }) {
 
@@ -15,7 +15,10 @@ export default props => {
                 {
                     text: 'Sim',
                     onPress() {
-                        console.warn('delete ' + user.id)
+                        dispatch({
+                            type: 'deleteUser',
+                            payload: user
+                        })
                     }
                 },
                 {
